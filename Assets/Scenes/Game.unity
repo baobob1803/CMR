@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b663ba02d7c8a5c458dd8300e05aaa1b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 0d0225b57989d1a478efca6d7b889f63, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1095,8 +1095,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: aafa5b9f-c80c-4eff-b5ea-75bb6481e816
-    m_ActionName: PlayerGameControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionId: 63db6881-bc79-4f7f-a6f0-93f0645a0913
+    m_ActionName: Controls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1086746525}
@@ -1111,19 +1111,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f00897de-3f88-40b7-957a-f11fdd10394c
-    m_ActionName: PlayerGameControls/PauseGame[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8d0f8937-ecef-46ab-9439-65dddae74a52
-    m_ActionName: PlayerGameControls/Cheat[/Keyboard/o]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6330f48c-cd3c-40d1-b5e6-b3593c33d560
-    m_ActionName: PlayerGameControls/Dash[/Keyboard/space]
+    m_ActionId: 9e05fdd1-5346-4f4c-ae59-8d4ef0f4a07b
+    m_ActionName: Controls/Pause [/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerGameControls
+  m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1086746525
