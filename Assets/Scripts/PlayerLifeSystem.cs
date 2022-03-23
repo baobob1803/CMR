@@ -36,9 +36,11 @@ public class PlayerLifeSystem : MonoBehaviour
         if (playerCurrentLife > 0)
         {
             playerCurrentLife -= 1;
+            Debug.Log("Taking a hit");
         }
         else
         {
+            Debug.Log("Losing");
             //Game Lost + save highscore,etc...
         }
     }

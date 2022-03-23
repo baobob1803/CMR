@@ -40,11 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
-            Time.timeScale = 0f;
-        }
-        if (ctx.canceled)
-        {
-            Time.timeScale = 1f;
+            GameMaster.instGameMaster.ManagePause();
         }
     }
 
