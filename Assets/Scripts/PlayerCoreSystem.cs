@@ -36,6 +36,10 @@ public class PlayerCoreSystem : MonoBehaviour
             playerLifeSystemRef.CheckEncounterStatus(hitObject.gameObject);
             break;
 
+            case "TP":
+            Debug.Log("TP hit");
+            break;
+
             default:
             break;
         }
