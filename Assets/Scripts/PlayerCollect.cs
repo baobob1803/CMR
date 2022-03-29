@@ -10,7 +10,7 @@ public class PlayerCollect : MonoBehaviour
     
     void Awake()
     {
-        scoreManagerRef = GameMaster.instGameMaster.GetComponent<ScoreManager>();
+        scoreManagerRef = GameMaster.instanceGM.GetComponent<ScoreManager>();
     }
 
     public void CollisionWithPGDetected(GameObject hitPG)

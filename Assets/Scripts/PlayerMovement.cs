@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
-            GameMaster.instGameMaster.ManagePause();
+            GameMaster.instanceGM.ManagePause();
         }
     }
 
