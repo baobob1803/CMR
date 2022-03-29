@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
 
         UpdateUI();
 
-        if(nbOfCollectedPG == 3)
+        if(nbOfCollectedPG == 161)
         {
             //GameWon
             //Check/Update highscores

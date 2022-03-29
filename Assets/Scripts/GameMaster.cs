@@ -19,18 +19,13 @@ public class GameMaster : MonoBehaviour
             instGameMaster = this;
         }
         //This will not create an instance if it's not in the scene
-        //Will  remove duplicates
+        //Will remove duplicates
         //Accessible anywhere
         //Not kept between scene loads
         //http://gameprogrammingpatterns.com/singleton.html
     }
 
     #endregion
-
-
-
-
-
 
 
     private bool gamePaused;
@@ -54,6 +49,6 @@ public class GameMaster : MonoBehaviour
             gamePaused = true;
         }
 
-        Debug.Log(gamePaused);
+        //Debug.Log(gamePaused);
     }
 }

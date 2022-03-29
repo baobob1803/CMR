@@ -30,6 +30,6 @@ public class BaseGrid
                 listOfGridCells.Add(currentIteratedGridCell);
             }
         }
-
     }
+
 }
