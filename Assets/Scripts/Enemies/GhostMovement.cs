@@ -6,11 +6,4 @@ public class GhostMovement : MonoBehaviour
 {
     [HideInInspector] public Vector3 destination;
 
-
-
-
-
-
-
-    
 }

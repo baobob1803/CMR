@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class GhostRoam : MonoBehaviour
 {
-    
-
     public void Selector(int colorIndex)
     {
         switch (colorIndex)
         {
-
             case 0:
                 StartCoroutine(RoamingFirstColor());
                 break;

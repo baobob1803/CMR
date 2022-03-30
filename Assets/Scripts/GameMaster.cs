@@ -96,14 +96,6 @@ public class GameMaster : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
     public void ManagePause()
     {
         if (gamePaused)
