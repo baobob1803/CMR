@@ -16,20 +16,20 @@ public class PlayerCollect : MonoBehaviour
     public void CollisionWithPGDetected(GameObject hitPG)
     {
         scoreManagerRef.PGCollection();
-        Debug.Log($"player has collected : " + scoreManagerRef.nbOfCollectedPG + " pg");
+        //Debug.Log($"player has collected : " + scoreManagerRef.nbOfCollectedPG + " pg");
         Destroy(hitPG);
     }
 
     public void CollisionWithSPG(GameObject hitSPG)
     {
-        Debug.Log("SPG collected");
+        //Debug.Log("SPG collected");
         boosted = true;
         StartCoroutine(BoostedBehavior(boostdurationSPG));
         Destroy(hitSPG);
     }
 
 
-    private IEnumerator BoostedBehavior(float boostedTime)
+    private IEnumerator BoostedBehavior(float boostedTime) //Coroutine to count the time where the player is boosted (later info will be given to enemy for states changes)
     {
         yield return new WaitForSeconds(boostedTime);
         boosted = false;

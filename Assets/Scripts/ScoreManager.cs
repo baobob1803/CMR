@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour
 {
 
-    [HideInInspector] public int nbOfCollectedPG = 0;
+    private int nbOfCollectedPG = 0;
     private TextMeshProUGUI scoreRef;
 
     void Awake()
@@ -23,11 +23,12 @@ public class ScoreManager : MonoBehaviour
 
         UpdateUI();
 
-        if(nbOfCollectedPG == 161)
+        if(nbOfCollectedPG == 10)
         {
+            GameMaster.instanceGM.SwitchOnGameStates(GameMaster.GameStates.GameWon);
             //GameWon
             //Check/Update highscores
-            StartCoroutine(Delay());
+            StartCoroutine(Delay()); //will be replaced in Game Master with enum switch states.
         }
     }
 
@@ -35,6 +36,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateUI()
     {
         scoreRef.text = nbOfCollectedPG.ToString();
+        //Will need to add playerLife
     }
 
 

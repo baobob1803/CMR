@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rgb2Dref;
+    private Rigidbody2D rgb2Dref;
     [HideInInspector] public float inputValueUp;
     [HideInInspector] public float inputValueSide;
-
     [Range(0, 15)] public float movementSpeed;
+
+    void Awake()
+    {
+        rgb2Dref = GetComponent<Rigidbody2D>();
+    }
 
     void FixedUpdate()
     {

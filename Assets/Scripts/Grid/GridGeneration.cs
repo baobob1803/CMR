@@ -11,7 +11,7 @@ public class GridGeneration : MonoBehaviour
 
     void Start()
     {
-        gridRef = new BaseGrid(gridSizeX, gridSizeY);
+        gridRef = new BaseGrid(gridSizeX, gridSizeY); //Construct a new grid
     }
 
 

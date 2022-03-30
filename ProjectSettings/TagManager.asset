@@ -9,6 +9,7 @@ TagManager:
   - Ghost
   - TP
   - ScorePanel
+  - GameFinishedPanel
   layers:
   - Default
   - TransparentFX
