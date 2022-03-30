@@ -9,5 +9,6 @@ public class GhostLifeSystem : MonoBehaviour
     public void KilledByBoostedPlayer()
     {
         transform.position = respawnPoint;
+        GetComponent<Ghost>().SwitchOnStates(Ghost.GhostStates.Init);
     }
 }

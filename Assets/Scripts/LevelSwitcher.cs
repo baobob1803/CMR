@@ -12,7 +12,7 @@ public class LevelSwitcher : MonoBehaviour
     private Coroutine corRef;
     public List<GameObject> listOfAllGhosts  =  new List<GameObject>(); //Later init ghost through code and not inspector in scene
 
-    public void InitSwitcher()
+    public void InitSwitcher()//Called by the cell Generation script once the map is setup
     {
         foreach (var wall in GetComponent<GameMaster>().listOfCreatedWalls)
         {
@@ -111,8 +111,6 @@ public class LevelSwitcher : MonoBehaviour
         }
     }
 
-
-
     public void SwitchOnLevelMorph(LevelMorph levelMorphToSet)
     {
         switch (levelMorphToSet)
@@ -138,7 +136,7 @@ public class LevelSwitcher : MonoBehaviour
 
 
 
-    public void SwitchColor(Color colorToSet) //Later create a specific visualizer
+    public void SwitchColor(Color colorToSet) //Later create a specific visualizer => method to set the right color for walls and ghosts
     {
         foreach (var walls in listOfAllWalls)
         {
@@ -147,6 +145,7 @@ public class LevelSwitcher : MonoBehaviour
         foreach(var ghost in listOfAllGhosts)
         {
             ghost.GetComponent<SpriteRenderer>().color = colorToSet;
+            ghost.GetComponent<Ghost>().mapColor = colorToSet;
         }
     }
 
