@@ -11,7 +11,6 @@ public class GhostFlee : MonoBehaviour
     {
         switch (colorIndex)
         {
-
             case 0:
                 break;
 

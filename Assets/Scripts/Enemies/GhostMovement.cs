@@ -6,4 +6,5 @@ public class GhostMovement : MonoBehaviour
 {
     [HideInInspector] public Vector3 destination;
 
+    //A* system to implement with grid
 }

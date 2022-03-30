@@ -13,12 +13,15 @@ public class GhostRoam : MonoBehaviour
                 break;
 
             case 1:
+                StartCoroutine(RoamingSecondColor());
                 break;
 
             case 2:
+                StartCoroutine(RoamingThirdColor());
                 break;
 
             case 3:
+                StartCoroutine(RoamingFourthColor());
                 break;
         }
     }
