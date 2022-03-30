@@ -10,13 +10,7 @@ public class LevelSwitcher : MonoBehaviour
     private int currentLevelSwitchIndex;
     private float switcherTimer = 10;
     private Coroutine corRef;
-
-
-    void Awake()
-    {
-        //listOfAllWalls.Equals(GameMaster.instanceGM.listOfCreatedWalls); => not working, wrong use of "Equals" ?
-        //CorCont();
-    }
+    public List<GameObject> listOfAllGhosts  =  new List<GameObject>(); //Later init ghost through code and not inspector in scene
 
     public void InitSwitcher()
     {
@@ -40,7 +34,7 @@ public class LevelSwitcher : MonoBehaviour
         }
     }
 
-    private IEnumerator LevelColorSwitcher()
+    private IEnumerator LevelColorSwitcher() //Coroutine to switch level color and enemy behavior
     {
         switcherTimer = 10;
 
@@ -62,7 +56,7 @@ public class LevelSwitcher : MonoBehaviour
         }
         currentLevelSwitchIndex = randomNumber;
 
-        Debug.Log($"RandomNumberFound" + randomNumber);
+        //Debug.Log($"RandomNumberFound" + randomNumber);
 
         /*
         switch(randomNumber)
@@ -124,32 +118,35 @@ public class LevelSwitcher : MonoBehaviour
         switch (levelMorphToSet)
         {
             case LevelMorph.Red:
-                SwitchWallColor(Color.red);
+                SwitchColor(Color.red);
                 break;
 
             case LevelMorph.Yellow:
-                SwitchWallColor(Color.yellow);
+                SwitchColor(Color.yellow);
                 break;
 
             case LevelMorph.White:
-                SwitchWallColor(Color.white);
+                SwitchColor(Color.white);
                 break;
 
             case LevelMorph.Phased:
                 //SpecialCase to set later => set to green for now
-                SwitchWallColor(Color.green);
+                SwitchColor(Color.green);
                 break;
         }
     }
 
 
 
-    public void SwitchWallColor(Color colorToSet) //Later create a specific visualizer
+    public void SwitchColor(Color colorToSet) //Later create a specific visualizer
     {
         foreach (var walls in listOfAllWalls)
         {
             walls.GetComponent<SpriteRenderer>().color = colorToSet;
-            Debug.Log(colorToSet);
+        }
+        foreach(var ghost in listOfAllGhosts)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = colorToSet;
         }
     }
 

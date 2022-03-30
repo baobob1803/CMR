@@ -21,7 +21,7 @@ public class PlayerLifeSystem : MonoBehaviour
     {
         if(playerCollectRef.boosted)
         {
-            //Launch method in enemy to damage him + behavior
+            enemyHit.GetComponent<GhostLifeSystem>().KilledByBoostedPlayer();
         }
         else
         {
@@ -36,6 +36,7 @@ public class PlayerLifeSystem : MonoBehaviour
         if (playerCurrentLife > 0)
         {
             playerCurrentLife -= 1;
+            transform.position = new Vector3(10, 8, 0);
             Debug.Log("Taking a hit");
         }
         else
