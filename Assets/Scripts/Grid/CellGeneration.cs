@@ -25,7 +25,7 @@ public class CellGeneration : MonoBehaviour
         {
             iteratedCellCoordinates = cells.GetComponent<GameCell>().cellCoordinates; //Set ref one time each iteration to limit the program complexity
 
-            if (iteratedCellCoordinates.x == 0 || iteratedCellCoordinates.x == 20 || iteratedCellCoordinates.y == 0 || iteratedCellCoordinates.y == 20) //Set up grid border walls
+            if (iteratedCellCoordinates.x == 0 && iteratedCellCoordinates.y != 10|| iteratedCellCoordinates.x == 20 && iteratedCellCoordinates.y != 10 || iteratedCellCoordinates.y == 0 || iteratedCellCoordinates.y == 20) //Set up grid border walls => not optimized find another option later (for tp position)
             {
                 listOfWallsPositions.Add(iteratedCellCoordinates);
             }
@@ -34,6 +34,7 @@ public class CellGeneration : MonoBehaviour
                 cells.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
             }
         }
+
 
         foreach (var cells in listOfAllCells) //Set up wall prefabs in level
         {
