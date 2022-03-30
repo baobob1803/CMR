@@ -43,7 +43,7 @@ public class CellGeneration : MonoBehaviour
             {
                 cells.GetComponentInChildren<SpriteRenderer>().color = Color.black;
                 var wall = GameObject.Instantiate(wallPrefab, new Vector3(iteratedCellCoordinates.x, iteratedCellCoordinates.y, -0.03f), Quaternion.identity);
-                GameMaster.instanceGM.listOfCreatedWalls.Add(wall);//Better to get ref in Awake or doesn't matter with singleton or not linked
+                GameMaster.instanceGM.listOfCreatedWalls.Add(wall);//Better to get ref in Awake or doesn't matter with singleton or not linked ?
             }
         }
         SetUpPG();

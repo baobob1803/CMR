@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 
 public class ScoreManager : MonoBehaviour
 {
 
-    private int nbOfCollectedPG = 0;
+    [HideInInspector] public int nbOfCollectedPG = 0;
     private TextMeshProUGUI scoreRef;
 
     void Awake()
@@ -23,28 +23,20 @@ public class ScoreManager : MonoBehaviour
 
         UpdateUI();
 
-        if(nbOfCollectedPG == 10)
+        if(nbOfCollectedPG == 161)
         {
             GameMaster.instanceGM.SwitchOnGameStates(GameMaster.GameStates.GameWon);
-            //GameWon
-            //Check/Update highscores
-            StartCoroutine(Delay()); //will be replaced in Game Master with enum switch states.
+            //Check/Update highscores + json
         }
     }
 
 
     public void UpdateUI()
     {
-        scoreRef.text = nbOfCollectedPG.ToString();
-        //Will need to add playerLife
+        scoreRef.text = (nbOfCollectedPG*10).ToString();
     }
 
 
-    private IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainMenu");
-    }
 
 
 }

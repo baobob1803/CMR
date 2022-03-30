@@ -41,7 +41,8 @@ public class PlayerLifeSystem : MonoBehaviour
         else
         {
             Debug.Log("Losing");
-            //Game Lost + save highscore,etc...
+            GameMaster.instanceGM.SwitchOnGameStates(GameMaster.GameStates.GameLost);
+            //save highscore w/ json
         }
     }
 
