@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerLifeSystem : MonoBehaviour
 {
     private PlayerCollect playerCollectRef;
     public int playerMaxLife;
     public int playerCurrentLife;
+    public TextMeshProUGUI lifeDisplayer; //Later use it in a specific visualizer and not the life systems
 
     void Awake()
     {
         playerCollectRef = GetComponent<PlayerCollect>();
         playerMaxLife = 3;
         playerCurrentLife = playerMaxLife;
+        UpdateLife();
     }
 
 
@@ -37,6 +40,7 @@ public class PlayerLifeSystem : MonoBehaviour
         {
             playerCurrentLife -= 1;
             transform.position = new Vector3(10, 8, 0);
+            UpdateLife();
             Debug.Log("Taking a hit");
         }
         else
@@ -47,5 +51,10 @@ public class PlayerLifeSystem : MonoBehaviour
         }
     }
 
+
+    public void UpdateLife()
+    {
+        lifeDisplayer.text = playerCurrentLife.ToString();
+    }
 
 }

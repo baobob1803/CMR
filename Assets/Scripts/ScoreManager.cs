@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        scoreRef.text = (nbOfCollectedPG*10).ToString();
+        scoreRef.text = ($"Score : " +(nbOfCollectedPG*10).ToString());
     }
 
 
